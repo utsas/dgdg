@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTML Div Layout</title>
+    <link rel="stylesheet" href="CSS/StyleSheet1.css">
+    <link rel="stylesheet" href="CSS/StyleSheet_Menu.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="header">
+            <h1>Write here Company Name</h1>
+
+            <ul>
+                <li><a class="active" id="op_Home">Home</a></li>
+                <li><a id="op_Contact">Contact</a></li>
+                <li><a id="op_Teams">Our Teams</a></li>
+                <li><a id="op_joinUs">join Us</a></li>
+                  
+                <li style="float:right"><a id="op_About">About</a></li>
+            </ul>
+        </div>
+
+        <div id="home_section" class="section">
+            <center>
+                <h2>Write here .....</h2>
+                <img src="images/a.jpg" alt="Company Picture" width="100" height="100">
+            </center>
+            <br />
+            <p>&emsp;&nbsp;&nbsp;Write Here ...</p>
+            <p>&emsp;Write Here ...</p>
+            
+            <div class="relative">
+                This div element has position: relative;
+                <div class="absolute">This div element has position: absolute;</div>
+            </div>
+        </div>
+
+
+        <div id="about_section" class="section" hidden>
+            <center>
+                <h2>About</h2>
+                <img src="images/a.jpg" alt="Company Picture" width="100" height="100">
+            </center>
+
+            <p>&emsp;&nbsp;&nbsp;Write Here ...</p>
+            <p>&emsp;Write Here ...</p>
+            <p>&emsp;Write Here ...</p>
+
+        </div>
+
+        <div id="Teams_section" class="section" hidden>
+            <center>
+                <h2>Our Teams</h2>
+                <table>
+                    <tr>
+                        <td><img src="images/a.jpg" alt="Company Picture" width="100" height="100"></td>
+                        <td><img src="images/a.jpg" alt="Company Picture" width="100" height="100"></td>
+                        <td><img src="images/a.jpg" alt="Company Picture" width="100" height="100"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Name: ...... </p>
+                        </td>
+                        <td>
+                            <p>Name: ...... </p>
+                        </td>
+                        <td>
+                            <p>Name: ...... </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Write Here ................</p>
+                            <p>Write Here ................</p>
+                            <p>Write Here ................</p>
+                        </td>
+                        <td>
+                            <p>Write Here ...</p>
+                            <p>Write Here ...</p>
+                            <p>Write Here ...</p>
+                        </td>
+                        <td>
+                            <p>Write Here ...</p>
+                            <p>Write Here ...</p>
+                            <p>Write Here ...</p>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+        <div id="contact_section" class="section" hidden>
+            <center>
+                <h2>Contact us</h2>
+            </center>
+            <form action="/action_page.php" style="justify-content:center">
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" value=""><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" value=""><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="mes">Message:</label><br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<textarea id="mes" name="mes" rows="4" cols="50"></textarea><br><br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div id="joinUs_section" class="section" hidden>
+            <center>
+                <h2>Join us</h2>
+            </center>
+            <form name="form1" action="" onsubmit="return validateEntry()">
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" value=""><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" value=""><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="email">Email:</label>
+                <input type="text" id="email" name="email" value=""><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<label for="notes">Notes:</label><br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;<b>Upload Your CV: </b>
+                <input type="file"
+                       id="file1"
+                       name="upload">
+                <br><br>
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="submit" value="Submit">
+            </form>          
+            
+        </div>
+
+        <div class="footer">
+            <p>copyright &copy; Company Y</p>
+        </div>
+
+    </div>
+    
+    <script type="text/javascript">
+        var _about_section = document.getElementById('about_section');
+        var _home_section = document.getElementById('home_section');
+        var _contact_section = document.getElementById('contact_section');
+        var _joinUs_section = document.getElementById('joinUs_section');
+        var _Teams_section = document.getElementById('Teams_section');
+
+
+        document.getElementById('op_joinUs').onclick = function () {
+            _about_section.hidden = true;
+            _home_section.hidden = true;
+            _contact_section.hidden = true;
+            _joinUs_section.hidden = false;
+            _Teams_section.hidden = true;
+        }
+
+        document.getElementById('op_Teams').onclick = function () {
+            _about_section.hidden = true;
+            _home_section.hidden = true;
+            _contact_section.hidden = true;
+            _joinUs_section.hidden = true;
+            _Teams_section.hidden = false;
+        }
+
+        document.getElementById('op_About').onclick = function () {
+            _about_section.hidden = false;
+            _home_section.hidden = true;
+            _contact_section.hidden = true;
+            _joinUs_section.hidden = true;
+            _Teams_section.hidden = true;
+        }
+
+        document.getElementById('op_Contact').onclick = function () {
+            _about_section.hidden = true;
+            _home_section.hidden = true;
+            _contact_section.hidden = false;
+            _joinUs_section.hidden = true;
+            _Teams_section.hidden = true;
+        }
+
+        document.getElementById('op_Home').onclick = function () {
+            _about_section.hidden = true;
+            _home_section.hidden = false;
+            _contact_section.hidden = true;
+            _joinUs_section.hidden = true;
+            _Teams_section.hidden = true;
+        }
+
+        function validateEntry() {
+            //var fn = document.getElementById('fname').value;
+            var fn = document.forms["form1"]["fname"].value;
+            //alert(fn);
+            if (fn == null || fn == "") { alert("Please enter first name"); }
+                        
+            var ln = document.forms["form1"]["lname"].value;
+            //alert(ln);
+            if (ln == null || ln == "") { alert("Please enter last name"); }
+            
+
+        }
+    </script>
+</body>
+</html>
